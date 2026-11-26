@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>ThreadLock G2 — Even Realities Glasses HUD (576×288)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== DESKTOP SIMULATOR CONTAINER ==================== -->
+  <div class="sim-container">
+    
+    <!-- SIMULATOR CONTROL BAR -->
+    <div class="sim-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="sim-badge">EVEN HUB SDK</span>
+        <strong style="color: #fff; font-size: 0.85rem;">Even Realities G2 Simulator</strong>
+        <span style="font-size: 0.72rem; color: #64748b;">(576×288 Monochrome OLED)</span>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="hw-button" id="btnToggleRaw" onclick="toggleRawMode()">📐 1:1 Raw Mode (576×288)</button>
+        <button class="hw-button" onclick="promptPairingCodeChange()">⚙ Code</button>
+      </div>
+    </div>
+
+    <!-- ==================== STRICT 576x288 G2 DISPLAY VIEWPORT ==================== -->
+    <div class="g2-viewport" id="viewport">
+      
+      <!-- 1. TOP BAR: PAIRING STATUS + ACTIVE DRIFT BADGE -->
+      <div class="hud-topbar">
+        <div class="hud-topbar-left">
+          <span style="font-size: 10px;">●</span>
+          <span id="hudPairCode">G2-S9EY</span>
+        </div>
+        <div id="hudCenterTitle" style="font-size: 11px; font-weight: 800; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+          THREADLOCK G2
+        </div>
+        <div class="hud-topbar-right">
+          <span class="badge-drift" id="hudDriftBadge">STANDBY</span>
+          <span id="hudStateBadge" style="font-size: 10px; opacity: 0.8;">MONITORING</span>
+        </div>
+      </div>
+
+      <!-- 2. CENTER CARD: CRISP 2-3 LINE DIFF -->
+      <div class="hud-center-card" id="hudCenterCard">
+        <div class="diff-headline" id="hudHeadline">ACTIVE MONITORING</div>
+        
+        <div class="diff-subrow">
+          <span id="hudOldVal">OLD: Baseline</span>
+          <span id="hudNewVal">NEW: In Sync</span>
+        </div>
+
+        <div class="diff-tags" id="hudTags">
+          Awaiting counterparty messages on active thread
+        </div>
+
+        <div class="diff-recommendation" id="hudRecommendation">
+          STATUS: LOCKED & MONITORED
+        </div>
+
+        <!-- CONFIRMATION & UNDO OVERLAY (SHOWN DURING 30s UNDO WINDOW) -->
+        <div class="hud-undo-overlay" id="hudUndoOverlay">
+          <div class="undo-title" id="undoActionName">CONFIRMED [ACTION]</div>
+          <div class="undo-timer-text" id="undoCountdownSeconds">30s TO UNDO • [TAP TO REVERT]</div>
+        </div>
+      </div>
+
+      <!-- 3. BOTTOM ACTION BAR: LOCK | FLAG | COUNTER (ACTIVE HIGHLIGHT) -->
+      <div class="hud-action-bar">
+        <!-- SLOT 0: LOCK -->
+        <div class="action-slot" id="slot-lock" onclick="selectActionDirect('LOCK')">
+          <span class="action-indicator"></span>LOCK
+        </div>
+        
+        <!-- SLOT 1: FLAG -->
+        <div class="action-slot active" id="slot-flag" onclick="selectActionDirect('FLAG')">
+          <span class="action-indicator">▶ </span>FLAG
+        </div>
+        
+        <!-- SLOT 2: COUNTER -->
+        <div class="action-slot" id="slot-counter" onclick="selectActionDirect('COUNTER')">
+          <span class="action-indicator"></span>COUNTER
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== HARDWARE CONTROLS HARNESS ==================== -->
+    <div class="sim-controls-pane">
+      
+      <!-- TEMPLE TOUCHPAD GESTURES -->
+      <div class="controls-section">
+        <div class="section-label">
+          <span>👓 Right Temple Touch Controls</span>
+          <span class="keyboard-hint">[Keys: ← Left | → Right | Space: Tap | Enter: Long Press]</span>
+        </div>
+        <div class="buttons-row">
+          <button class="hw-button" onclick="handleSwipeLeft()">
+            <span>◂ Swipe Left</span>
+            <span style="font-size: 0.65rem; color: #94a3b8;">(Action ◄)</span>
+          </button>
+          <button class="hw-button" onclick="handleTap()">
+            <span>● Single Tap</span>
+            <span style="font-size: 0.65rem; color: #94a3b8;">(Toggle / Undo)</span>
+          </button>
+          <button class="hw-button" onclick="handleSwipeRight()">
+            <span>Swipe Right ▸</span>
+            <span style="font-size: 0.65rem; color: #94a3b8;">(Action ►)</span>
+          </button>
+          <button class="hw-button" onclick="handleLongPress()">
+            <span>■ Long Press</span>
+            <span style="font-size: 0.65rem; color: #94a3b8;">(Confirm Action)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- EVEN R1 SMART RING CONTROLLER -->
+      <div class="controls-section">
+        <div class="section-label">
+          <span>💍 Even R1 Smart Ring Controller</span>
+          <span class="keyboard-hint">[Rotate to cycle actions • Click to confirm]</span>
+        </div>
+        <div class="buttons-row">
+          <button class="hw-button" onclick="handleRingRotate(-1)">
+            <span>⟲ Rotate Left</span>
+          </button>
+          <button class="hw-button" onclick="handleRingClick()" style="border-color: var(--g2-green);">
+            <strong style="color: var(--g2-green);">● Ring Click (Confirm)</strong>
+          </button>
+          <button class="hw-button" onclick="handleRingRotate(1)">
+            <span>Rotate Right ⟳</span>
+          </button>
+          <button class="hw-button" onclick="handleUndo()">
+            <span>↩ Revert (Undo)</span>
+          </button>
+          <button class="hw-button" onclick="handleVoicePrompt()">
+            <span>🎙 Voice Cmd</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

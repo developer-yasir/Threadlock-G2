@@ -1,0 +1,44 @@
+{
+  "appId": "com.threadlock.g2",
+  "name": "ThreadLock G2",
+  "version": "1.0.0",
+  "description": "Real-time deal commitment & drift detection HUD for Even Realities G2 smart glasses.",
+  "developer": "ThreadLock Team",
+  "category": "Productivity",
+  "window": {
+    "width": 576,
+    "height": 288,
+    "colorMode": "monochrome",
+    "background": "#000000",
+    "themeColor": "#00FF41",
+    "entry": "index.html"
+  },
+  "permissions": [
+    "network",
+    "audio_record",
+    "notifications",
+    "storage"
+  ],
+  "hardware": {
+    "display": "monochrome_green_576x288",
+    "camera": false,
+    "speaker": false,
+    "microphone": true,
+    "touchTemple": true,
+    "r1Ring": true
+  },
+  "networkWhitelist": [
+    "http://localhost:4000",
+    "http://127.0.0.1:4000",
+    "https://api.telegram.org"
+  ],
+  "simulator": {
+    "viewport": {
+      "width": 576,
+      "height": 288
+    },
+    "displayMode": "green-monochrome",
+    "ppi": 200,
+    "touchbar": true
+  }
+}

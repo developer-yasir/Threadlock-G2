@@ -1,0 +1,26 @@
+{
+  "name": "threadlock-g2-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ThreadLock G2 - Real-Time Deal Commitment & Drift Detection HUD for Even Realities G2",
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm --prefix backend run dev",
+    "start": "npm --prefix backend start",
+    "build": "npm --prefix backend run build",
+    "test": "npm --prefix backend test"
+  },
+  "keywords": [
+    "even-realities",
+    "even-hub",
+    "smart-glasses",
+    "hud",
+    "diff-engine",
+    "contract-lock",
+    "drift-detection"
+  ],
+  "author": "ThreadLock Team",
+  "license": "MIT"
+}
