@@ -611,6 +611,13 @@ export function createApp() {
 
     const verification = await telegramClient.getMe();
     if (verification.ok && verification.result) {
+      // Auto-start polling if not active and not using webhook
+      const webhookUrl = process.env.TELEGRAM_WEBHOOK_URL;
+      const isWebhookActive = !!webhookUrl && webhookUrl !== 'none' && webhookUrl.trim().startsWith('http');
+      if (!telegramBridge.isPolling() && process.env.TELEGRAM_POLLING !== 'false' && !isWebhookActive) {
+        await telegramBridge.startPolling();
+      }
+
       res.json({
         ok: true,
         bot: {
@@ -625,6 +632,25 @@ export function createApp() {
         ok: false,
         error: verification.error || 'Failed to verify bot credentials with Telegram API',
       });
+    }
+  });
+
+  app.post('/api/telegram/start-polling', async (_req: Request, res: Response) => {
+    try {
+      await telegramBridge.startPolling();
+      res.json({ ok: true, pollingActive: telegramBridge.isPolling() });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.post('/api/telegram/set-webhook', async (req: Request, res: Response) => {
+    try {
+      const targetUrl = req.body.url || `${req.protocol}://${req.get('host')}/api/telegram/webhook`;
+      const data = await telegramClient.apiCall(`setWebhook?url=${encodeURIComponent(targetUrl)}`);
+      res.json(data);
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
     }
   });
 
@@ -709,7 +735,9 @@ if (isDirectRun) {
           console.warn(` Telegram Bot Token Verification Warning: ${botInfo.error}`);
         }
 
-        const pollingEnabled = process.env.TELEGRAM_POLLING !== 'false' && !process.env.TELEGRAM_WEBHOOK_URL;
+        const webhookUrl = process.env.TELEGRAM_WEBHOOK_URL;
+        const isWebhookActive = !!webhookUrl && webhookUrl !== 'none' && webhookUrl.trim().startsWith('http');
+        const pollingEnabled = process.env.TELEGRAM_POLLING !== 'false' && !isWebhookActive;
         if (pollingEnabled) {
           console.log(` Telegram Bot Long-Polling Worker Started (Real-time live ingestion)`);
           await telegramBridge.startPolling();
