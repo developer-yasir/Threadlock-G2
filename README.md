@@ -18,6 +18,70 @@
 
 ---
 
+## 📸 Visual Showcase & Hardware Demonstration
+
+### 1. Even Realities G2 Heads-Up Display (576×288 Monochrome OLED)
+Optical see-through display showing real-time deal drift, custom rule alerts, and active touch-temple / Even R1 ring action controls in pure green phosphor (`#00FF41`).
+
+![Even Realities G2 HUD Simulator](docs/screenshots/03-g2-hud-simulator.png)
+
+> **G2 HUD Optical Close-Up (1:1 576×288 Micro-OLED View)**:
+>
+> ![Even Realities G2 OLED Display Close-Up](docs/screenshots/04-g2-oled-display-closeup.png)
+>
+> *Above: Real-time custom rule violation caught on incoming contract draft. Notice the active `▶ FLAG` action highlighted in bright phosphor, ready for 1-tap temple touch confirmation.*
+
+<p align="center">
+  <a href="https://threadlock-g-a74c8.containers.snapdeploy.app/g2/">
+    <img src="https://img.shields.io/badge/Launch-G2%20Glasses%20HUD%20(Interactive)-00ff41?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Launch G2 Glasses HUD" />
+  </a>
+  <a href="https://threadlock-g-a74c8.containers.snapdeploy.app/g2/?mode=raw">
+    <img src="https://img.shields.io/badge/Open-1:1%20Raw%20576%C3%97288%20OLED%20Mode-blue?style=for-the-badge" alt="Open 1:1 Raw Mode" />
+  </a>
+</p>
+
+---
+
+### 2. Companion Web Console — Active Negotiation Drift Evaluation
+The desktop/tablet command console where agreed baselines are locked, live Telegram threads are paired, and cryptographic SHA-256 audit logs are verified.
+
+![Active Negotiation Drift Evaluation](docs/screenshots/02-companion-drift-evaluation.png)
+
+*Key Features shown above:*
+- **Real-Time High Drift Alert**: Immediate detection of `+1050%` price surge (`$1,000` ➔ `$11,500 USD`) from client proposal.
+- **Simultaneous G2 Mirror**: Live SVG/OLED mirror displaying exact optical glasses rendering in sync.
+- **Read & Write Action Pipeline**: Instant one-click triggers for `Dispute Drift (FLAG)`, `Send Counter`, and `Accept New (LOCK)`.
+- **Server-Side Voice STT**: Speech recognition interface routing commands to backend with zero client secrets.
+- **Tamper-Evident SHA-256 Ledger**: Every state transition cryptographically hashed with live audit trail verification.
+
+<p align="center">
+  <a href="https://threadlock-g-a74c8.containers.snapdeploy.app/companion/">
+    <img src="https://img.shields.io/badge/Open-Companion%20Web%20Console-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Open Companion Console" />
+  </a>
+</p>
+
+---
+
+### 3. Live Demo Controls & Instant Scenario Testing
+Pre-configured judge test cases to immediately test price drift, deadline slips, scope creep, and payment clause violations.
+
+![Companion Console Standby & Live Scenarios](docs/screenshots/01-companion-overview.png)
+
+*1-Click Preset Chips for Judges:*
+- **+15% Price Drift**: Evaluates `$11,500` against `$10,000` baseline.
+- **+25d Deadline Slip**: Detects unapproved delivery push to Dec 25.
+- **Scope Creep**: Flags unauthorized deliverable addition (*"Can you throw in an admin panel?"*).
+- **Sneaky Net 90 Retainage**: Flags payment terms violating strict cash flow rules.
+- **Clean Confirmation**: Verifies flawless agreement match.
+
+<p align="center">
+  <a href="https://threadlock-g-a74c8.containers.snapdeploy.app/companion/">
+    <img src="https://img.shields.io/badge/Test-Live%20Scenarios%20Now-00ff41?style=for-the-badge" alt="Test Live Scenarios" />
+  </a>
+</p>
+
+---
+
 ## 🎯 The Problem & Vision
 
 In freelance contracts, high-stakes sales, consulting, and partnership negotiations, agreements are forged across messaging apps (Telegram, Slack, Email). However, commitments frequently **drift**:
@@ -252,6 +316,26 @@ PAIRING_CODE_EXPIRY_MINUTES=60
 
 > **No Legal or Financial Advice**:  
 > The diff evaluation and counter-offer templates provided by ThreadLock G2 are for informational and negotiation assistance purposes only and do not constitute formal legal or financial advice.
+
+---
+
+## 🌐 Instant Online Access for Hackathon Judges (No Setup Required)
+
+You can experience the complete ThreadLock G2 platform directly in your browser right now:
+
+| Interface | Direct Access Link | Description |
+|---|---|---|
+| **Companion Web Console** | 🔗 [Open Companion Console](https://threadlock-g-a74c8.containers.snapdeploy.app/companion/) | Full desktop command center with preset scenario triggers, live SSE stream, and SHA-256 ledger. |
+| **G2 Glasses Simulator** | 🔗 [Open Interactive G2 HUD](https://threadlock-g-a74c8.containers.snapdeploy.app/g2/) | Simulates Even Realities G2 smart glasses display with virtual temple touchpad and Even R1 ring. |
+| **G2 1:1 Raw OLED Viewport** | 🔗 [Open Raw 576×288 Display](https://threadlock-g-a74c8.containers.snapdeploy.app/g2/?mode=raw) | Exact 1:1 scale monochrome green OLED viewport designed for optical see-through lenses. |
+| **Official Telegram Bot** | ✈️ [@threadlock_g2_bot](https://t.me/threadlock_g2_bot?start=G2-S9EY) | Send real messages on Telegram to trigger live drift alerts on the glasses in real time! |
+
+> [!TIP]
+> **Quick 30-Second Judge Walkthrough**:
+> 1. Open the [Companion Console](https://threadlock-g-a74c8.containers.snapdeploy.app/companion/) in Tab 1.
+> 2. Open the [Interactive G2 HUD](https://threadlock-g-a74c8.containers.snapdeploy.app/g2/) in Tab 2.
+> 3. In Tab 1, click any preset chip (e.g. `+15% Price Drift` or `Scope Creep`) and click **"Evaluate Diff & Push to G2"**.
+> 4. Switch to Tab 2 to watch the Even Realities G2 glasses HUD flash the alert instantly! Click **"FLAG"** or rotate the virtual **R1 Ring** to execute an action.
 
 ---
 
