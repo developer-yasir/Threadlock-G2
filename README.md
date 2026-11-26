@@ -10,6 +10,14 @@
 
 ---
 
+## 🚀 Live Cloud Demo (24/7 Available for Judges)
+- **Live Companion Web Console**: [https://threadlock-g-a74c8.containers.snapdeploy.app/companion/](https://threadlock-g-a74c8.containers.snapdeploy.app/companion/)
+- **Live Even Realities G2 HUD (Interactive)**: [https://threadlock-g-a74c8.containers.snapdeploy.app/g2/](https://threadlock-g-a74c8.containers.snapdeploy.app/g2/)
+- **Live G2 Viewport (1:1 Raw 576×288 Mode)**: [https://threadlock-g-a74c8.containers.snapdeploy.app/g2/?mode=raw](https://threadlock-g-a74c8.containers.snapdeploy.app/g2/?mode=raw)
+- **Official Telegram Bot**: [@threadlock_g2_bot](https://t.me/threadlock_g2_bot) (Session Pairing: `G2-S9EY` or [1-Click Link](https://t.me/threadlock_g2_bot?start=G2-S9EY))
+
+---
+
 ## 🎯 The Problem & Vision
 
 In freelance contracts, high-stakes sales, consulting, and partnership negotiations, agreements are forged across messaging apps (Telegram, Slack, Email). However, commitments frequently **drift**:
@@ -148,7 +156,7 @@ Threadlock-G2/
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/Threadlock-G2.git
+git clone https://github.com/developer-yasir/Threadlock-G2.git
 cd Threadlock-G2
 
 # Install dependencies
