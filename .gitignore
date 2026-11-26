@@ -9,3 +9,8 @@ backend/.env.*
 *.log
 .DS_Store
 Thumbs.db
+*.mp4
+*.avi
+*.wmv
+*.screenrec
+Recording*/

@@ -1,12 +1,20 @@
-# ThreadLock G2 🕶️🔒
-> **Heads-Up Deal Commitment & Terms Drift Detection HUD for Even Realities G2 Smart Glasses**  
-> *Built for the "Heads Up: Even Realities Hackathon" (Deadline: Nov 30, 2026)*
+<p align="center">
+  <img src="docs/assets/logo.png" alt="ThreadLock G2 Logo" width="260" style="border-radius: 24px; box-shadow: 0 10px 40px rgba(0, 255, 65, 0.25);" />
+</p>
 
-[![Tests](https://img.shields.io/badge/tests-45%20passed%20(100%25)-00ff41?style=flat-square)](backend/tests/)
-[![Display](https://img.shields.io/badge/Even%20Hub%20Display-576%C3%97288%20Monochrome-00ff41?style=flat-square)](g2-app/app.json)
-[![Hardware](https://img.shields.io/badge/G2%20Hardware-Touchpad%20%7C%20R1%20Ring%20%7C%20Mic-blue?style=flat-square)](g2-app/evenhub-adapter.js)
-[![Telegram%20Bot](https://img.shields.io/badge/Telegram%20Bot-@threadlock__g2__bot-229ED9?style=flat-square&logo=telegram)](https://t.me/threadlock_g2_bot)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+<h1 align="center">ThreadLock G2 🕶️🔒</h1>
+<p align="center">
+  <strong>Heads-Up Deal Commitment & Terms Drift Detection HUD for Even Realities G2 Smart Glasses</strong><br>
+  <em>Built for the "Heads Up: Even Realities Hackathon" (Deadline: Nov 30, 2026)</em>
+</p>
+
+<p align="center">
+  <a href="backend/tests/"><img src="https://img.shields.io/badge/tests-45%20passed%20(100%25)-00ff41?style=flat-square" alt="Tests" /></a>
+  <a href="g2-app/app.json"><img src="https://img.shields.io/badge/Even%20Hub%20Display-576%C3%97288%20Monochrome-00ff41?style=flat-square" alt="Display" /></a>
+  <a href="g2-app/evenhub-adapter.js"><img src="https://img.shields.io/badge/G2%20Hardware-Touchpad%20%7C%20R1%20Ring%20%7C%20Mic-blue?style=flat-square" alt="Hardware" /></a>
+  <a href="https://t.me/threadlock_g2_bot"><img src="https://img.shields.io/badge/Telegram%20Bot-@threadlock__g2__bot-229ED9?style=flat-square&logo=telegram" alt="Telegram Bot" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License" /></a>
+</p>
 
 ---
 
